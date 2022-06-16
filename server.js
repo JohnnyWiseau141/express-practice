@@ -8,8 +8,11 @@ const app = express()
 
 //configure the app (app.set)
 
+app.set("view engine", "ejs")
 
 // mount middleware(app.use)
+
+app.use(express.static('public'))
 
 //mount routes
 
@@ -17,16 +20,16 @@ app.get("/", function(req, res) {
     res.send("<h1>basic response for basic learning</h1>")
 })
 
-app.get("/hallo", function(req, res) {
-    res.send("<h1>Hello there general greivous! Adding more for pushing and commiting purposes.</h1>")
+app.get("/home", function(req, res) {
+    res.render("home")
 })
 
-app.get("/doyouknowtheway", function(re, res) {
+app.get("/doyouknowtheway", function(req, res) {
     res.redirect("/youdonotknowtheway")
 })
 
 app.get("/youdonotknowtheway", function(req, res) {
-    res.send("<h1>HEY CORTANA PLAY GOD SHATTERING STAR</h1>")
+    res.render("youdonotknowtheway")
 })
 
 //tell the app to listen on port 3000
