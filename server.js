@@ -1,6 +1,7 @@
 //import modules
 
 import express from 'express'
+import * as todoDb from './data/todo-db.js'
 
 //create express app
 
@@ -22,6 +23,15 @@ app.get("/", function(req, res) {
 
 app.get("/home", function(req, res) {
     res.render("home")
+})
+
+app.get('/todos', function(req, res) {
+    todoDb.find({}, function(error, todos) {
+        res.render('todos/index', {
+            todos: todos,
+            error: error
+        })
+    })
 })
 
 app.get("/doyouknowtheway", function(req, res) {
