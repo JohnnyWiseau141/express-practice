@@ -14,7 +14,11 @@
     <% }  %> 
     <ul>
         <% todos.forEach( function(todo) { %>
-            <li> <%= todo.text %> </li>
+            <li> 
+                <%= todo.text %> 
+                -
+                <%= todo.done ? 'done' : 'not done' %>
+            </li>
         <% }) %>
     </ul>
 
