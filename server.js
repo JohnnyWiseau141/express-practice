@@ -18,7 +18,7 @@ app.use(express.static('public'))
 //mount routes
 
 app.get("/", function(req, res) {
-    res.send("<h1>basic response for basic learning</h1>")
+    res.redirect("/home")
 })
 
 app.get("/home", function(req, res) {
