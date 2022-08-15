@@ -42,6 +42,10 @@ app.get("/youdonotknowtheway", function(req, res) {
     res.render("youdonotknowtheway")
 })
 
+app.get("/connect4pylons", function(req, res) {
+    res.render("connect4pylons")
+})
+
 //tell the app to listen on port 3000
 
 app.listen(3000, function() {
